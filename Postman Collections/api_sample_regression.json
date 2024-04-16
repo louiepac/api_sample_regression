@@ -103,7 +103,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"type": "text/javascript",
+						"id": "5a882d55-aba4-4443-b6ac-13cb55f4e6dd",
 						"exec": [
 							"const getData = () => pm.response.json().data;",
 							"",
@@ -125,11 +125,13 @@
 							"    const data = getData();",
 							"",
 							"    // Check expected values are present",
-							"    pm.expect(data.title).to.equal(\"Sapiens\");",
+							"    pm.expect(data.title).to.equal(\"Sapiens1\");",
 							"    pm.expect(data.author).to.equal(\"Yuval Noah Harari\");",
 							"    pm.expect(data.published).to.equal(2011);",
 							"});"
-						]
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
