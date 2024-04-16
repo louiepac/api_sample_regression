@@ -125,7 +125,7 @@
 							"    const data = getData();",
 							"",
 							"    // Check expected values are present",
-							"    pm.expect(data.title).to.equal(\"Sapiens1\");",
+							"    pm.expect(data.title).to.equal(\"Sapiens\");",
 							"    pm.expect(data.author).to.equal(\"Yuval Noah Harari\");",
 							"    pm.expect(data.published).to.equal(2011);",
 							"});"
