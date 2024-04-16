@@ -111,7 +111,7 @@
 							"    const data = getData();",
 							"",
 							"    // Check the expected properties exist",
-							"    pm.expect(data).to.have.property(\"titles\");",
+							"    pm.expect(data).to.have.property(\"title\");",
 							"    pm.expect(data).to.have.property(\"author\");",
 							"    pm.expect(data).to.have.property(\"published\");",
 							"",
