@@ -111,7 +111,7 @@
 							"    const data = getData();",
 							"",
 							"    // Check the expected properties exist",
-							"    pm.expect(data).to.have.property(\"title\");",
+							"    pm.expect(data).to.have.property(\"titles\");",
 							"    pm.expect(data).to.have.property(\"author\");",
 							"    pm.expect(data).to.have.property(\"published\");",
 							"",
@@ -226,6 +226,59 @@
 				},
 				"url": "{{baseUrl}}/get",
 				"description": "This request has a test asserting that certain response headers are present or have an expected value.\n\nYou can access details of the response, such as headers, on the `pm.response` object. See the [response object documentation](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#scripting-with-response-data) for other properties available."
+			},
+			"response": []
+		},
+		{
+			"name": "Using multiple assertions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "82e02a32-52c6-4d68-9305-9d37af811dbb",
+						"exec": [
+							"pm.test(\"The response has all properties\", () => {\r",
+							"    //parse the response json and test three properties\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.form.type).to.eql('vip');\r",
+							"    pm.expect(responseJson.form.name).to.be.a('string');\r",
+							"    pm.expect(responseJson.form.id).to.have.lengthOf(1);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "ce457c24-303a-4d86-a15d-1518d01e6ac9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Donald Trump",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "vip",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://postman-echo.com/post",
+				"description": "Your tests can include multiple assertions as part of a single test—you can use this to group together related assertions.\n\n```\npm.test(\"The response has all properties\", () => {\n    //parse the response json and test three properties\n    const responseJson = pm.response.json();\n    pm.expect(responseJson.type).to.eql('vip');\n    pm.expect(responseJson.name).to.be.a('string');\n    pm.expect(responseJson.id).to.have.lengthOf(1);\n});\n```\n\nIf any of the contained assertions fails, the test as a whole will fail. All assertions must be successful for the test to pass."
 			},
 			"response": []
 		}
