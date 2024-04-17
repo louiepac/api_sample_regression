@@ -243,6 +243,7 @@
 							"    pm.expect(responseJson.form.type).to.eql('vip');\r",
 							"    pm.expect(responseJson.form.name).to.be.a('string');\r",
 							"    pm.expect(responseJson.form.id).to.have.lengthOf(1);\r",
+							"    pm.expect(responseJson.url).to.eql(\"https://postman-echo.com/post\");\r",
 							"});"
 						],
 						"type": "text/javascript",
