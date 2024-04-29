@@ -34,6 +34,33 @@
 			"response": []
 		},
 		{
+			"name": "Status code verification Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2df65358-3559-4b37-a77e-ae83d09d7b45",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "25d3ecaf-fce6-4f8b-b2a7-60a45ad196f2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/get",
+				"description": "The test on this request asserts that the reponse has a \"200 OK\" status.\n\nYou can check for any HTTP status code using the same mechanism, for example `pm.response.to.have.status(403)` if your API should return an \"Unauthorized\" response."
+			},
+			"response": []
+		},
+		{
 			"name": "JSON schema response validation",
 			"event": [
 				{
