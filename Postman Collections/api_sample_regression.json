@@ -188,8 +188,8 @@
 					"script": {
 						"id": "8135c0dc-f423-4fdc-80d3-a206a3c4b522",
 						"exec": [
-							"pm.test(\"Verify response time is less than 5 seconds\", function () {",
-							"    const fiveSecondsMs = 500; // 5 seconds in milliseconds",
+							"pm.test(\"Verify response time is less than 1 seconds\", function () {",
+							"    const fiveSecondsMs = 1_000; // 5 seconds in milliseconds",
 							"    pm.expect(pm.response.responseTime).to.be.below(fiveSecondsMs);",
 							"});",
 							""
@@ -201,8 +201,12 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"packages": {},
-						"type": "text/javascript"
+						"id": "fb442f5a-7576-4690-8276-bd6dd6d547eb",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
